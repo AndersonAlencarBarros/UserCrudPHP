@@ -195,21 +195,32 @@
                                 </tr>
                             </thead>
 
+                            <tbody class="table-users">
+
                             <?php
                             require "database.php";
 
                             $users = GetAllUsers();
 
                             while ($row = $users->fetch_assoc()) {
-                                echo "id: " . $row["id"] . " - Name: " . $row["NAME"] . " " . $row["email"] . "<br>";
+                                echo <<<EOD
+                                    <tr>
+                                        <th scope='row'>{$row["id"]}</th>
+                                        <td>{$row["NAME"]}</td>
+                                        <td>{$row["email"]}</td>
+                                        <td>{$row["phone"]}</td>
+                                    </tr>
+                                    EOD;
+
+                                // echo "id: " . $row["id"] . " - Name: " . $row["NAME"] . " " . $row["email"] . "<br>";
                             }
                             ?>
 
+                            
+                            </tbody>
+
+
                             <!-- <tbody class="table-users">
-                            </tbody> -->
-
-
-                            <tbody class="table-users">
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark</td>
@@ -228,7 +239,7 @@
                                     <td>the Bird</td>
                                     <td>@twitter</td>
                                 </tr>
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>
