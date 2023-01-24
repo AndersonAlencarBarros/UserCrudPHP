@@ -1,30 +1,34 @@
 <?php
 
-// $errors = [];
-// $data = [];
+require "database.php";
 
-// if (empty($_POST['name'])) {
-//     $errors['name'] = 'Name is required.';
-// }
+$errors = [];
+$data = [];
 
-// if (empty($_POST['email'])) {
-//     $errors['email'] = 'Email is required.';
-// }
+if (empty($_POST['name'])) {
+    $errors['name'] = 'Preencha seu nome.';
+}
 
-// if (empty($_POST['superheroAlias'])) {
-//     $errors['superheroAlias'] = 'Superhero alias is required.';
-// }
+if (empty($_POST['email'])) {
+    $errors['email'] = 'Preencha seu e-mail';
+}
 
-// if (!empty($errors)) {
-//     $data['success'] = false;
-//     $data['errors'] = $errors;
-// } else {
-//     $data['success'] = true;
-//     $data['message'] = 'Success!';
-// }
+if (empty($_POST['phone'])) {
+    $errors['phone'] = 'Preencha seu telefone';
+}
+
+if (!empty($errors)) {
+    $data['success'] = false;
+    $data['errors'] = $errors;
+} else {
+    $data['success'] = true;
+    $data['message'] = 'Success!';
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+
+    InserNewUser($name, $email, $phone);
+}
 
 // echo json_encode($data);
-
-echo $_POST['name_complete'];
-echo $_POST['email'];
-echo $_POST['phone'];

@@ -37,18 +37,17 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
           </div>
 
           <div class="clearfix"></div>
 
           <!-- menu profile quick info -->
-          <div class="profile clearfix">
+          <div class="profile clearfix d-flex align-items-center">
             <div class="profile_pic">
               <img src="images/img.jpg" alt="..." class="img-circle profile_img">
             </div>
-            <div class="profile_info">
-              <span>Welcome,</span>
+            <div class="profile_info ">
               <h2>John Doe</h2>
             </div>
           </div>
@@ -59,9 +58,24 @@
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-              <h3>General</h3>
+              <h3>Usuários</h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+
+                <li>
+                  <a href="index.php">
+                    <i class="fa fa-edit"></i> Cadastrar Usuários
+                  </a>
+                </li>
+
+                <li>
+                  <a href="users.php">
+                    <i class="fa fa-list"></i> Lista de Usuários
+                  </a>
+                </li>
+
+
+
+                <!-- <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="index.html">Dashboard</a></li>
                     <li><a href="index2.html">Dashboard2</a></li>
@@ -111,10 +125,10 @@
                     <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                     <li><a href="fixed_footer.html">Fixed Footer</a></li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </div>
-            <div class="menu_section">
+            <!-- <div class="menu_section">
               <h3>Live On</h3>
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
@@ -155,7 +169,7 @@
                 </li>
                 <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
               </ul>
-            </div>
+            </div> -->
 
           </div>
           <!-- /sidebar menu -->
@@ -186,7 +200,7 @@
                 </div>
               </li>
 
-              <li role="presentation" class="nav-item dropdown open">
+              <!-- <li role="presentation" class="nav-item dropdown open">
                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-envelope-o"></i>
                   <span class="badge bg-green">6</span>
@@ -249,7 +263,7 @@
                     </div>
                   </li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </nav>
         </div>
@@ -267,14 +281,12 @@
           </div>
 
           <div class="x_content">
-
             <form class="form-label-left input_mask" action="form.php" method="POST">
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="text" class="form-control has-feedback-left" id="name" name="name_complete" placeholder="Nome Completo" />
+                <input type="text" class="form-control has-feedback-left" id="name" name="name" placeholder="Nome Completo" />
                 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
               </div>
-
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
                 <input type="email" class="form-control has-feedback-left" id="email" name="email" placeholder="Email">
@@ -282,12 +294,12 @@
               </div>
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="tel" class="form-control has-feedback-left" id="phone" name="phone" placeholder="Telefone">
+                <input type="tel" class="form-control has-feedback-left" id="phone" name="phone" placeholder="Telefone" data-mdb-input-mask="+48 999-999-999" />
                 <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
               </div>
 
-              <div class="form-group row d-flex justify-content-center mt-5">
-                <div class="col-md-12 col-sm-12  offset-md-3">
+              <div class="form-group row d-flex justify-content-center">
+                <div class="col-md-12 col-sm-12  offset-md-3 mt-3">
                   <button type="button" class="btn btn-primary">Cancel</button>
                   <button class="btn btn-primary" type="reset">Reset</button>
                   <button type="submit" class="btn btn-success">Submit</button>
@@ -295,9 +307,19 @@
               </div>
 
             </form>
+
+
+            <div class="form-message mt-3">
+              <div class="alert alert-success" role="alert">
+                A simple success alert—check it out!
+              </div>
+
+              <div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+              </div>
+
+            </div>
           </div>
-
-
 
         </div>
       </div>
@@ -306,7 +328,7 @@
       <!-- footer content -->
       <footer>
         <div class="pull-right">
-          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          @ Copyright
         </div>
         <div class="clearfix"></div>
       </footer>
@@ -360,6 +382,8 @@
   <!-- Custom Theme Scripts -->
   <script src="../build/js/custom.min.js"></script>
 
+
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
