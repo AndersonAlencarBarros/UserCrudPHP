@@ -53,3 +53,22 @@ function GetAllUsers()
 
     return $result;
 }
+
+function DeleteUserByID($id)
+{
+    $conn = OpenCon();
+
+    $sql = "DELETE FROM users WHERE users.id = $id";
+
+    $result = $conn->query($sql);
+
+    // if ($result) {
+    //     echo $result;
+    // } else {
+    //     echo 'Não foi possível ler os dados dos usuários.';
+    // }
+
+    CloseCon($conn);
+
+    return $result;
+} 

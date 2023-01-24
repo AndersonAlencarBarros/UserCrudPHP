@@ -313,29 +313,30 @@ session_start();
             </form>
 
             <?php
-            if (
-              isset($_SESSION["data"]["success"]) and
-              $_SESSION["data"]["success"] = true
-            ) {
+
+            if (isset($_SESSION["data"]["success"])) {
+              $success = $_SESSION["data"]["success"];
+
+              if ($success) {
             ?>
 
-              <div class="alert alert-success" role="alert">
-                <?php echo "Usuário cadastrado." ?>
-              </div>
+                <div class="alert alert-success" role="alert">
+                  <?php echo "Usuário cadastrado." ?>
+                </div>
+
+              <?php
+              } else {
+              ?>
+
+                <div class="alert alert-danger" role="alert">
+                  echo "Ops...Algum problema aconteceu :("
+                </div>
 
             <?php
-            } else if (
-              isset($_SESSION["data"]["success"]) and
-              $_SESSION["data"]["success"] = false
-            ) {
-            ?>
-
-              <div class="alert alert-danger" role="alert">
-                echo "Ops...Algum problema aconteceu :("
-              </div>
-
-            <?php
+              }
             }
+            
+            session_destroy();
             ?>
           </div>
         </div>
