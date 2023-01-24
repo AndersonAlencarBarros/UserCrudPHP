@@ -62,21 +62,19 @@
                             <ul class="nav side-menu">
 
                                 <li>
-                                    <a>
-                                        <i class="fa fa-list"></i> Lista de Usuários
+                                    <a href="index.php">
+                                        <i class="fa fa-edit"></i> Cadastrar Usuários
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a>
-                                        <i class="fa fa-edit"></i> Cadastrar Usuários
+                                    <a href="users.php">
+                                        <i class="fa fa-list"></i> Lista de Usuários
                                     </a>
                                 </li>
 
                             </ul>
                         </div>
-
-
                     </div>
                     <!-- /sidebar menu -->
 
@@ -188,8 +186,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box table-responsive">
-                                    <div id="datatable-fixed-header_wrapper"
-                                        class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
+                                    <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="dataTables_length" id="datatable-fixed-header_length"><label>Show <select name="datatable-fixed-header_length" aria-controls="datatable-fixed-header" class="form-control input-sm">
@@ -216,7 +213,7 @@
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody> 
+                                                    <tbody>
                                                         <?php
                                                         require "database.php";
 

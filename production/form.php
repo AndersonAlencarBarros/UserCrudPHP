@@ -18,17 +18,17 @@ if (empty($_POST['phone'])) {
 }
 
 if (!empty($errors)) {
-    $data['success'] = false;
+    $data['validation'] = false;
     $data['errors'] = $errors;
 } else {
-    $data['success'] = true;
+    $data['validation'] = true;
     $data['message'] = 'Success!';
 
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    InserNewUser($name, $email, $phone);
+    $sucess = InserNewUser($name, $email, $phone);
 }
 
 session_start();
