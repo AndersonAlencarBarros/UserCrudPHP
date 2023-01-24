@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -308,32 +312,47 @@
 
             </form>
 
+            <?php
+            if (
+              isset($_SESSION["data"]["success"]) and
+              $_SESSION["data"]["success"] = true
+            ) {
+            ?>
 
-            <div class="form-message mt-3">
               <div class="alert alert-success" role="alert">
-                A simple success alert—check it out!
+                <?php echo "Usuário cadastrado." ?>
               </div>
+
+            <?php
+            } else if (
+              isset($_SESSION["data"]["success"]) and
+              $_SESSION["data"]["success"] = false
+            ) {
+            ?>
 
               <div class="alert alert-danger" role="alert">
-                A simple danger alert—check it out!
+                echo "Ops...Algum problema aconteceu :("
               </div>
 
-            </div>
+            <?php
+            }
+            ?>
           </div>
-
         </div>
+
       </div>
-      <!-- /page content -->
-
-      <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          @ Copyright
-        </div>
-        <div class="clearfix"></div>
-      </footer>
-      <!-- /footer content -->
     </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <footer>
+      <div class="pull-right">
+        @ Copyright
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+  </div>
   </div>
 
 

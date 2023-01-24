@@ -31,4 +31,6 @@ if (!empty($errors)) {
     InserNewUser($name, $email, $phone);
 }
 
-// echo json_encode($data);
+session_start();
+$_SESSION["data"] = $data;
+header("location:index.php"); 

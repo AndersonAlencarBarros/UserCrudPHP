@@ -197,49 +197,24 @@
 
                             <tbody class="table-users">
 
-                            <?php
-                            require "database.php";
+                                <?php
+                                require "database.php";
 
-                            $users = GetAllUsers();
+                                $users = GetAllUsers();
 
-                            while ($row = $users->fetch_assoc()) {
-                                echo <<<EOD
+                                while ($row = $users->fetch_assoc()) {
+                                    echo "
                                     <tr>
-                                        <th scope='row'>{$row["id"]}</th>
-                                        <td>{$row["NAME"]}</td>
-                                        <td>{$row["email"]}</td>
-                                        <td>{$row["phone"]}</td>
-                                    </tr>
-                                    EOD;
+                                        <th scope='row'>{$row['id']}</th>
+                                        <td>{$row['NAME']}</td>
+                                        <td>{$row['email']}</td>
+                                        <td>{$row['phone']}</td>
+                                    </tr> ";
+                                }
+                                ?>
 
-                                // echo "id: " . $row["id"] . " - Name: " . $row["NAME"] . " " . $row["email"] . "<br>";
-                            }
-                            ?>
 
-                            
                             </tbody>
-
-
-                            <!-- <tbody class="table-users">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody> -->
                         </table>
                     </div>
                 </div>
