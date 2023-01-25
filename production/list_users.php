@@ -65,7 +65,7 @@ require "head.php"
 
                                                         while ($row = $users->fetch_assoc()) :
                                                             $id = $row['id'];
-                                                            $name = $row['NAME'];
+                                                            $name = $row['full_name'];
                                                             $email = $row['email'];
                                                             $phone = $row['phone'];
 

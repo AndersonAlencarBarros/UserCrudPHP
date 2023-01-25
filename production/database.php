@@ -20,10 +20,10 @@ function InserNewUser($name, $email, $phone)
 {
     $conn = OpenCon();
 
-    $sql = "INSERT INTO users(name, email, phone) 
+    $sql = "INSERT INTO users(full_name, email, phone) 
             VALUES('$name', '$email', '$phone')";
     $result = $conn->query($sql);
-  
+
     CloseCon($conn);
 
     return $result;
@@ -35,7 +35,7 @@ function GetAllUsers()
 
     $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
-  
+
     CloseCon($conn);
 
     return $result;
@@ -47,21 +47,33 @@ function DeleteUserByID($id)
 
     $sql = "DELETE FROM users WHERE users.id = $id";
     $result = $conn->query($sql);
-  
+
     CloseCon($conn);
 
     return $result;
-} 
+}
+
+function GetUserByID($id)
+{
+    $conn = OpenCon();
+
+    $sql = "SELECT * FROM users WHERE users.id = $id";
+    $result = $conn->query($sql); 
+
+    CloseCon($conn);
+
+    return $result;
+}
 
 function UpdateUser($id, $name, $email, $phone)
 {
     $conn = OpenCon();
 
-    $sql = "UPDATE users SET NAME = $name, email = $email, phone = $phone
-            WHERE users.id = $id"; 
+    $sql = "UPDATE users SET full_name = $name, email = $email, phone = $phone
+            WHERE users.id = $id";
 
     $result = $conn->query($sql);
-  
+
     CloseCon($conn);
 
     return $result;

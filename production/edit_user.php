@@ -1,5 +1,17 @@
 <?php
+require "database.php";
+
+$id = $_GET['user_id'];
+
 session_start();
+$_SESSION["id"] = $id;
+
+$data = GetUserByID($id);
+$user = $data->fetch_assoc();
+
+$name = $user["full_name"];
+$phone = $user["phone"];
+$email = $user["email"];
 ?>
 
 <!DOCTYPE html>
@@ -33,20 +45,20 @@ require "head.php"
           </div>
 
           <div class="x_content">
-            <form class="form-label-left input_mask" action="form.php" method="POST">
+            <form class="form-label-left input_mask" action="handle_edit.php" method="POST">
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="text" class="form-control has-feedback-left" id="name" name="name" placeholder="Nome Completo" />
+                <input type="text" class="form-control has-feedback-left" id="name" name="name" placeholder="Nome Completo" value="<?php echo $name; ?>" />
                 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
               </div>
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="email" class="form-control has-feedback-left" id="email" name="email" placeholder="Email">
+                <input type="email" class="form-control has-feedback-left" id="email" name="email" placeholder="Email" value="<?php echo $email; ?>" />
                 <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
               </div>
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="tel" class="form-control has-feedback-left" id="phone" name="phone" placeholder="Telefone" data-mdb-input-mask="+48 999-999-999" />
+                <input type="tel" class="form-control has-feedback-left" id="phone" name="phone" placeholder="Telefone" value="<?php echo $phone; ?>" />
                 <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
               </div>
 
@@ -55,35 +67,7 @@ require "head.php"
                   <button type="submit" class="btn btn-success">Enviar</button>
                 </div>
               </div>
-
             </form>
-
-            <?php
-
-            if (isset($_SESSION["data"]["success"])) {
-              $success = $_SESSION["data"]["success"];
-
-              if ($success) {
-            ?>
-
-                <div class="alert alert-success" role="alert">
-                  <?php echo "Usuário Alterado com sucesso." ?>
-                </div>
-
-              <?php
-              } else {
-              ?>
-
-                <div class="alert alert-danger" role="alert">
-                  <?php echo "Ops...Algum problema aconteceu :(" ?>
-                </div>
-
-            <?php
-              }
-            }
-
-            session_destroy();
-            ?>
           </div>
         </div>
 
