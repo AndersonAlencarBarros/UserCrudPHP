@@ -24,11 +24,11 @@ require "head.php"
 
       <!-- page content -->
       <div class="right_col d-flex justify-content-center" role="main">
-        <div class="x_panel col-md-6" style="max-height: 400px;">
+        <div class="x_panel col-md-6" style="max-height: 700px;">
 
           <!-- Cadastro do Usuário -->
           <div class="x_title">
-            <h2>Faça seu cadastro</h2>
+            <h2>Modificação do Cadastro</h2>
             <div class="clearfix"></div>
           </div>
 
@@ -50,11 +50,9 @@ require "head.php"
                 <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
               </div>
 
-              <div class="form-group row d-flex justify-content-center">
-                <div class="col-md-12 col-sm-12  offset-md-3 mt-3">
-                  <button type="button" class="btn btn-primary">Cancel</button>
-                  <button class="btn btn-primary" type="reset">Reset</button>
-                  <button type="submit" class="btn btn-success">Submit</button>
+              <div class="form-group row ">
+                <div class="d-flex justify-content-center mt-5 col-md-12 col-sm-12">
+                  <button type="submit" class="btn btn-success">Enviar</button>
                 </div>
               </div>
 
@@ -69,7 +67,7 @@ require "head.php"
             ?>
 
                 <div class="alert alert-success" role="alert">
-                  <?php echo "Usuário cadastrado." ?>
+                  <?php echo "Usuário Alterado com sucesso." ?>
                 </div>
 
               <?php
@@ -77,7 +75,7 @@ require "head.php"
               ?>
 
                 <div class="alert alert-danger" role="alert">
-                  echo "Ops...Algum problema aconteceu :("
+                  <?php echo "Ops...Algum problema aconteceu :(" ?>
                 </div>
 
             <?php

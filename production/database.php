@@ -29,7 +29,6 @@ function InserNewUser($name, $email, $phone)
     return $result;
 }
 
-
 function GetAllUsers()
 {
     $conn = OpenCon();
@@ -53,3 +52,17 @@ function DeleteUserByID($id)
 
     return $result;
 } 
+
+function UpdateUser($id, $name, $email, $phone)
+{
+    $conn = OpenCon();
+
+    $sql = "UPDATE users SET NAME = $name, email = $email, phone = $phone
+            WHERE users.id = $id"; 
+
+    $result = $conn->query($sql);
+  
+    CloseCon($conn);
+
+    return $result;
+}

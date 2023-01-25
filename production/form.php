@@ -33,4 +33,5 @@ if (!empty($errors)) {
 
 session_start();
 $_SESSION["data"] = $data;
+
 header("location:index.php"); 
