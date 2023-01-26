@@ -48,6 +48,6 @@
     var phone = document.getElementById("phone");
 
     $(document).ready(function() {
-        $(phone).inputmask("99 9 99999999"); //static mask
-    });
+        $(phone).inputmask("99 9 99999999");
+    }); 
 </script>
