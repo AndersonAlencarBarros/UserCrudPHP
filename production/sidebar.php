@@ -1,20 +1,17 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+      <a href="index.php" class="site_title d-flex justify-content-center"></i> <span>UserCRUD</span></a>
     </div>
 
     <div class="clearfix"></div>
 
     <!-- menu profile quick info -->
-    <div class="profile clearfix d-flex align-items-center">
-      <div class="profile_pic">
-        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-      </div>
-      <div class="profile_info ">
+    <!-- <div class="profile clearfix d-flex align-items-center">
+      <div class="profile_info d-flex justify-content-center">
         <h2>John Doe</h2>
       </div>
-    </div>
+    </div> -->
     <!-- /menu profile quick info -->
 
     <br />
@@ -36,6 +33,14 @@
               <i class="fa fa-list"></i> Lista de Usuários
             </a>
           </li>
+          
+          <li>
+            <a href="banner.php">
+              <i class="fa fa-picture-o "></i> Banner
+            </a>
+          </li>
+
+
         </ul>
       </div>
     </div>
