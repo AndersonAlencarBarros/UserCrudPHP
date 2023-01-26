@@ -48,7 +48,7 @@ require "head.php"
             <form class="form-label-left input_mask" action="handle_edit.php" method="POST">
 
               <div class="col-md-12 col-sm-12  form-group has-feedback">
-                <input type="text" class="form-control has-feedback-left" id="name" name="name" placeholder="Nome Completo" value="<?php echo $name; ?>" />
+                <input type="text" class="form-control has-feedback-left" id="name" name="full_name" placeholder="Nome Completo" value="<?php echo $name; ?>" />
                 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
               </div>
 
@@ -64,7 +64,10 @@ require "head.php"
 
               <div class="form-group row ">
                 <div class="d-flex justify-content-center mt-5 col-md-12 col-sm-12">
-                  <button type="submit" class="btn btn-success">Enviar</button>
+                  <button type="submit" class="btn btn-success ">
+                  <i class="fa fa-save mr-2"></i>  
+                  Salvar
+                </button>
                 </div>
               </div>
             </form>

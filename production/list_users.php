@@ -80,13 +80,13 @@ require "head.php"
                                                             <td class='d-flex justify-content-center m-0'>
                                                                 <form name="edit_user" action="edit_user.php" method="GET">
                                                                     <input type="hidden" name="user_id" value="<?php echo $id; ?>" />
-                                                                    <button type='submit' name="user_id" value="<?php echo $id; ?>" class='btn btn-light mr-0 ml-0'>
+                                                                    <button type='submit' name="user_id" value="<?php echo $id; ?>" class='btn btn-success mx-1'>
                                                                         Editar
                                                                     </button>
                                                                 </form>
                                                                 <form name="delete_user" action="delete_user.php" method="POST">
                                                                     <input type="hidden" name="user_id" value="<?php echo $id; ?>" />
-                                                                    <button type='submit' name="user_id" value="<?php echo $id; ?>" class='btn btn-light mr-0 ml-0'>
+                                                                    <button type='submit' name="user_id" value="<?php echo $id; ?>" class='btn btn-danger mx-1'>
                                                                         Excluir
                                                                     </button>
                                                                 </form>

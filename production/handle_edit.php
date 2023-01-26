@@ -4,11 +4,11 @@ require "database.php";
 session_start(); 
 $id = $_SESSION["id"]; 
 
-$name = $_POST['name'];
+$name = $_POST['full_name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
-
-UpdateUser($id, $name, $phone, $email);
+  
+UpdateUser($id, $name, $email, $phone);
  
 session_destroy();
 

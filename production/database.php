@@ -58,7 +58,7 @@ function GetUserByID($id)
     $conn = OpenCon();
 
     $sql = "SELECT * FROM users WHERE users.id = $id";
-    $result = $conn->query($sql); 
+    $result = $conn->query($sql);
 
     CloseCon($conn);
 
@@ -66,14 +66,19 @@ function GetUserByID($id)
 }
 
 function UpdateUser($id, $name, $email, $phone)
-{
+{ 
+
     $conn = OpenCon();
 
-    $sql = "UPDATE users SET full_name = $name, email = $email, phone = $phone
-            WHERE users.id = $id";
+    $sql = "UPDATE users 
+            SET 
+                full_name = '$name',
+                email = '$email', 
+                phone = '$phone'
+            WHERE id = '$id' ";
 
     $result = $conn->query($sql);
-
+  
     CloseCon($conn);
 
     return $result;

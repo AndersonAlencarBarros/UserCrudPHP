@@ -1,5 +1,6 @@
 <!-- jQuery -->
 <script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="../vendors/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
 <!-- Bootstrap -->
 <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- FastClick -->
@@ -40,4 +41,13 @@
 <script src="../build/js/custom.min.js"></script>
 
 
-<script src="./js/app.js"></script>
+
+<!-- <script src="./js/app.js"></script> -->
+
+<script type='text/javascript'>
+    var phone = document.getElementById("phone");
+
+    $(document).ready(function() {
+        $(phone).inputmask("99 9 99999999"); //static mask
+    });
+</script>
