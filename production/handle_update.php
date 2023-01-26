@@ -4,9 +4,12 @@ require "database.php";
 session_start(); 
 $id = $_SESSION["id"]; 
 
-$name = $_POST['full_name'];
+$name = $_POST['name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
+
+
+
    
 UpdateUser($id, $name, $email, $phone);
  

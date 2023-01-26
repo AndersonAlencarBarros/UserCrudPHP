@@ -32,7 +32,7 @@
           </li>
 
           <li>
-            <a href="list_users.php">
+            <a href="list_page.php">
               <i class="fa fa-list"></i> Lista de Usuários
             </a>
           </li>

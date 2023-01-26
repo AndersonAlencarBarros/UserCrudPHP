@@ -78,7 +78,7 @@ require "head.php"
                                                                  "
                                                         ?>
                                                             <td class='d-flex justify-content-center m-0'>
-                                                                <form name="edit_user" action="update_user.php" method="GET">
+                                                                <form name="edit_user" action="update_page.php" method="GET">
                                                                     <input type="hidden" name="user_id" value="<?php echo $id; ?>" />
                                                                     <button type='submit' name="user_id" value="<?php echo $id; ?>" class='btn btn-success mx-1'>
                                                                         Editar
