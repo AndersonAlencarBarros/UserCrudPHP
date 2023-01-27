@@ -1,6 +1,8 @@
 <?php
 session_start();
-  
+
+require "banner_database.php";
+
 // Verifica os erros no upload do arquivo.
 switch ($_FILES['banner']['error']) {
     case UPLOAD_ERR_OK:
@@ -17,7 +19,7 @@ switch ($_FILES['banner']['error']) {
         //     $message = 'Ops...Algum problema ocorreu..';
 }
 
-// Verifica a extenção do arquivo.
+// Verifica a extensão do arquivo.
 if (!empty($_FILES['banner']['tmp_name'])) {
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     if (false === $ext = array_search(
@@ -47,6 +49,9 @@ $file = $target_dir . $banner_name . '.' . $ext;
 // Realiza o upload 
 if (empty($message)) {
     if (move_uploaded_file($_FILES['banner']['tmp_name'], $file)) {
+        // Salva no banco de dados o nome junto com a extensão do arquivo
+
+        InserNewBanner($banner_name . "."  . $ext);
         $success = "Upload do arquivo bem sucedido.";
     } else {
         $message = "Ops...Algum problema aconteceu\n";;

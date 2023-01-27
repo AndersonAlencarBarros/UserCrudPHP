@@ -32,28 +32,21 @@ require "head.php"
             <!-- /top navigation -->
 
             <!-- page content -->
-            <div class="right_col d-flex justify-content-center" role="main">
-                <div class="x_panel col-md-6" style="max-height: 250px;">
+            <div class="right_col" role="main">
+                <div class="x_panel col-md-8" style="max-height: 250px;">
                     <div class="x_title">
-                        <h2>Banners</h2>
+                        <h2>Cadastro de Banners</h2>
                         <div class="clearfix"></div>
                     </div>
-
 
                     <div class="x_content">
                         <div class="row">
                             <div class="col-sm-12">
                                 <form class="form-label-left input_mask" action="handle_banner_upload.php" method="POST" enctype="multipart/form-data" novalidate>
-
-
                                     <div class="col-md-12 col-sm-12 form-group has-feedback">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
-                                        <input type="file" class="form-control has-feedback-left" id="banner" name="banner" placeholder="Selecione um arquivo." required/>
+                                        <input type="file" class="form-control has-feedback-left" id="banner" name="banner" placeholder="Selecione um arquivo." required />
                                         <span class="fa fa-picture-o form-control-feedback left" aria-hidden="true"></span>
-
-
-
-
                                     </div>
 
                                     <span class="text-danger"><?php echo $message ?? '';  ?></span>
@@ -69,6 +62,24 @@ require "head.php"
                         </div>
                     </div>
                 </div>
+
+
+                <div class="x_panel col-md-8" style="max-height: 250px;">
+                    <h2>Lista de Banners</h2>
+
+                    <?php
+                    require "banner_database.php";
+                    $banners = GetAllBanners();
+
+                    while ($row = $banners->fetch_assoc()) :
+                        $name = $row['name'];
+                    ?>
+                        <img src="../img/<?php echo $name ?>" class="w-25 shadow-1-strong rounded mb-4" />
+                    <?php
+                    endwhile;
+                    ?>
+                </div>
+
             </div>
         </div>
     </div>
