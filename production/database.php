@@ -4,7 +4,8 @@ function OpenCon()
 {
     $dbhost = "localhost";
     $dbuser = "root";
-    $dbpass = "";
+    // $dbpass = "";    // WAMP
+    $dbpass = "12345";  // Linux
     $db = "appdb";
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
@@ -66,7 +67,7 @@ function GetUserByID($id)
 }
 
 function UpdateUser($id, $name, $email, $phone)
-{ 
+{
 
     $conn = OpenCon();
 
@@ -78,7 +79,7 @@ function UpdateUser($id, $name, $email, $phone)
             WHERE id = '$id' ";
 
     $result = $conn->query($sql);
-  
+
     CloseCon($conn);
 
     return $result;
