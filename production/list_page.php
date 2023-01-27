@@ -47,6 +47,7 @@ require "head.php"
 
                                         <div class="row">
                                             <div class="col-sm-12">
+                                                <!-- Tabela de Usuários -->
                                                 <table id="datatable-fixed-header" class="table table-striped table-bordered dataTable no-footer" style="width: 100%;" role="grid" aria-describedby="datatable-fixed-header_info">
                                                     <thead>
                                                         <tr role="row">

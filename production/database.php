@@ -4,8 +4,8 @@ function OpenCon()
 {
     $dbhost = "localhost";
     $dbuser = "root";
-    // $dbpass = "";    // WAMP
-    $dbpass = "12345";  // Linux
+    $dbpass = "";    // WAMP
+    // $dbpass = "12345";  // Linux
     $db = "appdb";
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
