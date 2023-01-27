@@ -32,7 +32,7 @@ require "head.php"
             <!-- /top navigation -->
 
             <!-- page content -->
-            <div class="right_col" role="main">
+            <div class="right_col " role="main">
                 <div class="x_panel col-md-8" style="max-height: 250px;">
                     <div class="x_title">
                         <h2>Cadastro de Banners</h2>
@@ -63,15 +63,14 @@ require "head.php"
                     </div>
                 </div>
 
-
-                <div class="x_panel col-md-8" style="max-height: 250px;">
+                <div class="x_panel col-md-12" >
                     <h2>Lista de Banners</h2>
 
                     <?php
                     require "banner_database.php";
                     $banners = GetAllBanners();
 
-                    while ($row = $banners->fetch_assoc()) :
+                    while ($row = $banners->fetch_assoc()):
                         $name = $row['name'];
                     ?>
                         <img src="../img/<?php echo $name ?>" class="w-25 shadow-1-strong rounded mb-4" />
