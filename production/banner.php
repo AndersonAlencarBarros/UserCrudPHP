@@ -32,8 +32,8 @@ require "head.php"
             <!-- /top navigation -->
 
             <!-- page content -->
-            <div class="right_col " role="main">
-                <div class="x_panel col-md-8" style="max-height: 250px;">
+            <div class="right_col" role="main">
+                <div class="x_panel col-md-8 m-2" style="max-height: 250px;">
                     <div class="x_title">
                         <h2>Cadastro de Banners</h2>
                         <div class="clearfix"></div>
@@ -63,20 +63,40 @@ require "head.php"
                     </div>
                 </div>
 
-                <div class="x_panel col-md-12" >
+                <div class="x_panel">
                     <h2>Lista de Banners</h2>
 
-                    <?php
-                    require "banner_database.php";
-                    $banners = GetAllBanners();
+                    <div class="container">
+                        <div class="row">
 
-                    while ($row = $banners->fetch_assoc()):
-                        $name = $row['name'];
-                    ?>
-                        <img src="../img/<?php echo $name ?>" class="w-25 shadow-1-strong rounded mb-4" />
-                    <?php
-                    endwhile;
-                    ?>
+
+                            <?php
+                            require "banner_database.php";
+                            $banners = GetAllBanners();
+
+                            while ($row = $banners->fetch_assoc()) :
+                                $id = $row['id'];
+                                $name = $row['name'];
+                            ?>
+                                <div class="col-md-3">
+                                    <img src="../img/<?php echo $name ?>" class=" rounded mb-3 img-fluid rounded img-thumbnail" />
+
+                                    <form 
+                                    class="text-center"
+                                    name="delete_banner" action="handle_banner_delete.php" method="POST">
+                                        <input type="hidden" name="banner_id" value="<?php echo $id; ?>" />
+                                        <button type='submit' name="banner_id" value="<?php echo $id; ?>" class='btn btn-danger mx-1'>
+                                            Excluir
+                                        </button>
+                                    </form>
+                                </div>
+
+
+                            <?php
+                            endwhile;
+                            ?>
+                        </div>
+                    </div>
                 </div>
 
             </div>

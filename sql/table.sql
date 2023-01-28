@@ -11,3 +11,11 @@ SELECT * FROM users;
 
 INSERT INTO users (full_name , email, phone )
 VALUES ('And', 'and@gmail.com', '1111-9999');
+
+
+CREATE TABLE banner (
+    id  INT AUTO_INCREMENT NOT NULL, 
+    name VARCHAR(100) NOT NULL, 
+
+    PRIMARY KEY(id)
+)

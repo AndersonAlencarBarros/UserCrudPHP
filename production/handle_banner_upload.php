@@ -50,11 +50,11 @@ $file = $target_dir . $banner_name . '.' . $ext;
 if (empty($message)) {
     if (move_uploaded_file($_FILES['banner']['tmp_name'], $file)) {
         // Salva no banco de dados o nome junto com a extensão do arquivo
-
+        
         InserNewBanner($banner_name . "."  . $ext);
         $success = "Upload do arquivo bem sucedido.";
     } else {
-        $message = "Ops...Algum problema aconteceu\n";;
+        $message = "Ops...Algum problema aconteceu :( \n";;
     }
 }
 

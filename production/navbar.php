@@ -1,6 +1,6 @@
 <div class="top_nav">
-    <div class="nav_menu">
-        <div class="nav toggle my-1">
+    <div class="nav_menu m-0">
+        <div class="nav toggle mb-2">
             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
         </div>
         <!-- <nav class="nav navbar-nav">
