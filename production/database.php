@@ -1,12 +1,14 @@
 <?php
 
+require "environment.php";
+
 function OpenCon()
 {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    // $dbpass = "";    // WAMP
-    $dbpass = "12345";  // Linux
-    $db = "appdb";
+    $dbhost = $_ENV["DATABASE_HOST"];
+    $dbuser = $_ENV["DATABASE_USER"];
+    $dbpass = $_ENV["DATABASE_PASSWORD"];
+    $db = $_ENV["DATABASE_NAME"];
+
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
     return $conn;

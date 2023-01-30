@@ -60,9 +60,10 @@ function GetBannerByID($id)
 {
     $conn = OpenCon();
 
-    $sql = " SELECT * FROM banner WHERE banner.id = '$id' ";
+    $sql = "SELECT * FROM banner WHERE id = {$id}";
+ 
     $result = $conn->query($sql);
-
+      
     CloseCon($conn);
 
     return $result;
