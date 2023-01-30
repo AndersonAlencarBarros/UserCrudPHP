@@ -5,7 +5,7 @@ CREATE TABLE users (
     phone VARCHAR(15) NOT NULL, 
 
     PRIMARY KEY(id)
-)
+);
 
 SELECT * FROM users;
 
@@ -15,7 +15,7 @@ VALUES ('And', 'and@gmail.com', '1111-9999');
 
 CREATE TABLE banner (
     id  INT AUTO_INCREMENT NOT NULL, 
-    name VARCHAR(100) NOT NULL, 
+    banner_name VARCHAR(100) NOT NULL, 
 
     PRIMARY KEY(id)
-)
+);

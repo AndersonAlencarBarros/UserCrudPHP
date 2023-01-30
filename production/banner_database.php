@@ -1,12 +1,14 @@
 <?php
 
+require "environment.php"; 
+
 function OpenCon()
 {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    // $dbpass = "";               // WAMP
-    $dbpass = "12345";       // Linux
-    $db = "appdb";
+    $dbhost = $_ENV["DATABASE_HOST"];
+    $dbuser = $_ENV["DATABASE_USER"];
+    $dbpass = $_ENV["DATABASE_PASSWORD"];
+    $db = $_ENV["DATABASE_NAME"];
+  
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
 
     return $conn;
@@ -21,7 +23,7 @@ function InserNewBanner($name)
 {
     $conn = OpenCon();
 
-    $sql = "INSERT INTO banner(name) 
+    $sql = "INSERT INTO banner(banner_name) 
             VALUES('$name')";
     $result = $conn->query($sql);
 
@@ -46,7 +48,7 @@ function DeleteBannerByID($id)
 {
     $conn = OpenCon();
 
-    $sql = "DELETE FROM banner WHERE banner.id = $id";
+    $sql = " DELETE FROM banner WHERE banner.id = '$id' ";
     $result = $conn->query($sql);
 
     CloseCon($conn);
@@ -58,11 +60,10 @@ function GetBannerByID($id)
 {
     $conn = OpenCon();
 
-    $sql = "SELECT * FROM banner WHERE banner.id = $id";
+    $sql = " SELECT * FROM banner WHERE banner.id = '$id' ";
     $result = $conn->query($sql);
 
     CloseCon($conn);
 
     return $result;
 }
- 

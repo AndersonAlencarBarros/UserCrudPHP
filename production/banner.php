@@ -76,14 +76,12 @@ require "head.php"
 
                             while ($row = $banners->fetch_assoc()) :
                                 $id = $row['id'];
-                                $name = $row['name'];
+                                $banner_name = $row['banner_name'];
                             ?>
                                 <div class="col-md-3">
-                                    <img src="../img/<?php echo $name ?>" class=" rounded mb-3 img-fluid rounded img-thumbnail" />
+                                    <img src="../img/<?php echo $banner_name ?>" class=" rounded mb-3 img-fluid rounded img-thumbnail" />
 
-                                    <form 
-                                    class="text-center"
-                                    name="delete_banner" action="handle_banner_delete.php" method="POST">
+                                    <form class="text-center" name="delete_banner" action="handle_banner_delete.php" method="POST">
                                         <input type="hidden" name="banner_id" value="<?php echo $id; ?>" />
                                         <button type='submit' name="banner_id" value="<?php echo $id; ?>" class='btn btn-danger mx-1'>
                                             Excluir
