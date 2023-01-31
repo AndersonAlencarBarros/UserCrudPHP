@@ -1,6 +1,6 @@
 <?php
 
-require "environment.php";
+require "environment.php"; 
 
 function OpenCon()
 {
