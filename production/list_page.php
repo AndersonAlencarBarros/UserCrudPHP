@@ -32,18 +32,16 @@ require "head.php"
                                 <div class="card-box table-responsive">
                                     <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
 
-                                        <table id="users-datatable" class="display" style="width:100%">
+                                        <table id="users-datatable" class="display table-striped" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th>Nome Completo</th>
                                                     <th>E-mail</th>
                                                     <th>Telefone</th>
+                                                    <th>Ações</th>
                                                 </tr>
                                             </thead>
                                         </table>
-
-
-
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +79,7 @@ require "head.php"
                     dataSrc: ""
                 },
 
+                order: [],
                 processing: true,
                 responsive: true,
 
@@ -92,6 +91,36 @@ require "head.php"
                     },
                     {
                         data: 'Email'
+                    },
+                    {
+                        data: function(data, type, row, meta) {
+
+                            console.log(data)
+
+                            return ( `<div class='d-flex flex-wrap justify-content-center'><form name = "edit_user"
+                                action = "update_page.php"
+                                method = "GET" >
+                                <input type = "hidden"
+                                name = "user_id"
+                                value = '${data.id}' />
+                                <button type = 'submit'
+                                name = "user_id"
+                                value = '${data.id}'
+                                class = 'fa fa-eye btn btn-success mx-1' >
+                                 </button> </form > 
+                                
+                                <form name = "delete_user"
+                                action = "handle_delete.php"
+                                method = "POST" >
+                                <input type = "hidden"
+                                name = "user_id"
+                                value = '${data.id}' / >
+                                <button type = 'submit'
+                                name = "user_id"
+                                value = '${data.id}'
+                                class = 'fa fa-trash btn btn-danger mx-1' > 
+                                </button> </form> </div>` )
+                        }
                     }
                 ]
             });
